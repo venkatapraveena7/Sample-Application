@@ -1,0 +1,21 @@
+<div class="container-fluid" *ngIf="isLoggedIn">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item"><a [routerLink]="['/dashboard']" routerLinkActive="router-link-active"
+                            class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a [routerLink]="['/employeemanagement']" routerLinkActive="router-link-active"
+                            class="nav-link">Employee Management</a></li>
+                    <li class="nav-item"><a (click)="logout()" class="nav-link">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<div *ngIf="!isLoggedIn">
+    <app-login></app-login>
+</div>

@@ -1,0 +1,13 @@
+p {
+    font-family: Lato;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .pointer.active.desc:after {
+    content: "▲";
+  }
+  .pointer.active.asc:after {
+    content: "▼";
+  }
+  

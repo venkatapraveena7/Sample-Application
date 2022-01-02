@@ -1,0 +1,29 @@
+<div class="form-group">
+    <div class="col-md-6">
+        <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search" />
+    </div>
+</div>
+
+<div class="col-md-12">
+    <table class="table table-responsive table-hover">
+        <tr>
+            <th [ngClass]="{pointer: true, active:column=='EmpId',desc:isDesc, asc:!isDesc}" (click)="sort('EmpId')">
+                EmpId</th>
+            <th [ngClass]="{pointer: true, active:column=='EmpName',desc:isDesc, asc:!isDesc}"
+                (click)="sort('EmpName')">
+                EmpName</th>
+            <th [ngClass]="{pointer: true, active:column=='Position',desc:isDesc, asc:!isDesc}"
+                (click)="sort('Position')">
+                Position</th>
+            <th [ngClass]="{pointer: true, active:column=='JoiningDate',desc:isDesc, asc:!isDesc}"
+                (click)="sort('JoiningDate')">
+                Joining Date</th>
+        </tr>
+        <tr *ngFor="let item of Employees | searchFilter : searchText">
+            <td>{{item.empid}}</td>
+            <td>{{item.empname}}</td>
+            <td>{{item.position}}</td>
+            <td>{{item.date|dateformat}}</td>
+        </tr>
+    </table>
+</div>

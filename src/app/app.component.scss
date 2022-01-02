@@ -1,0 +1,14 @@
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .router-link-active {
+    color: #c8a97e !important;
+  }
+  
+  .nav-link .router-link-active a:hover {
+    color: white;
+  }
+  
